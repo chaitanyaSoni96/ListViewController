@@ -6,18 +6,71 @@
 //
 
 import UIKit
+import ListViewController
 
 class ExamplesViewController: UIViewController {
     static func instantiate() -> ExamplesViewController {
         let vc = ExamplesViewController(nibName: "ExamplesViewController", bundle: Bundle.init(for: Self.self))
         return vc
     }
+    
+    lazy var listViewController: ListViewController = {
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+        
+        let vc = ListViewController.instantiate(layout: layout)
+        self.addChild(vc)
+        return vc
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        self.view.addSubview(listViewController.view)
+        listViewController.view.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor)
+        
+        let getDidSelectItem: (ExampleListCellData) -> (() -> ()) = { data in
+            return { [weak self] in
+                guard let detailType = DetailType.init(rawValue: data.text), let self = self else { return }
+                self.showDetailVC(type: detailType)
+            }
+        }
+        
+        let items: [ItemCellViewModelProtocol] = ExampleListCellData.sampleData.map({
+            return ExampleListCVCellItemViewModel(data: $0, didSelectAction: getDidSelectItem($0))
+        })
+        
+        listViewController.loadItems(items)
+        
     }
+    enum DetailType: String {
+        case simple = "Simple"
+        case multiple = "Multiple Cells"
+        case autoResizing = "Auto sizing cells"
+    }
+    func showDetailVC(type: DetailType) {
+        switch type {
+        
+        case .simple:
+            
+            break
+        case .multiple:
+            
+            break
+        case .autoResizing:
+            
+            break
+        }
+    }
+}
 
 
+extension ExampleListCellData {
+    static let sampleData = [ExampleListCellData(text: "Simple"),
+                             ExampleListCellData(text: "Multiple Cells"),
+                             ExampleListCellData(text: "Auto sizing cells")]
 }
 

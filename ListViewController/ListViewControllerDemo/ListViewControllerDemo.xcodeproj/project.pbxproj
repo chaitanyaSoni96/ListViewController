@@ -13,6 +13,8 @@
 		2868A186262D387C008E9435 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2868A184262D387C008E9435 /* LaunchScreen.storyboard */; };
 		2868A192262D3958008E9435 /* ListViewController in Frameworks */ = {isa = PBXBuildFile; productRef = 2868A191262D3958008E9435 /* ListViewController */; };
 		2868A198262D39C0008E9435 /* ExamplesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2868A197262D39C0008E9435 /* ExamplesViewController.xib */; };
+		2868A19F262D3F77008E9435 /* ExampleListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2868A19D262D3F77008E9435 /* ExampleListCollectionViewCell.swift */; };
+		2868A1A0262D3F77008E9435 /* ExampleListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2868A19E262D3F77008E9435 /* ExampleListCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		2868A187262D387C008E9435 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2868A18E262D389B008E9435 /* ListViewController */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ListViewController; path = ..; sourceTree = "<group>"; };
 		2868A197262D39C0008E9435 /* ExamplesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExamplesViewController.xib; sourceTree = "<group>"; };
+		2868A19D262D3F77008E9435 /* ExampleListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleListCollectionViewCell.swift; sourceTree = "<group>"; };
+		2868A19E262D3F77008E9435 /* ExampleListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExampleListCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 				2868A179262D387C008E9435 /* AppDelegate.swift */,
 				2868A17D262D387C008E9435 /* ExamplesViewController.swift */,
 				2868A197262D39C0008E9435 /* ExamplesViewController.xib */,
+				2868A19D262D3F77008E9435 /* ExampleListCollectionViewCell.swift */,
+				2868A19E262D3F77008E9435 /* ExampleListCollectionViewCell.xib */,
 				2868A182262D387C008E9435 /* Assets.xcassets */,
 				2868A184262D387C008E9435 /* LaunchScreen.storyboard */,
 				2868A187262D387C008E9435 /* Info.plist */,
@@ -139,6 +145,7 @@
 				2868A198262D39C0008E9435 /* ExamplesViewController.xib in Resources */,
 				2868A186262D387C008E9435 /* LaunchScreen.storyboard in Resources */,
 				2868A183262D387C008E9435 /* Assets.xcassets in Resources */,
+				2868A1A0262D3F77008E9435 /* ExampleListCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2868A17E262D387C008E9435 /* ExamplesViewController.swift in Sources */,
+				2868A19F262D3F77008E9435 /* ExampleListCollectionViewCell.swift in Sources */,
 				2868A17A262D387C008E9435 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,7 +300,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2RW34KLZ83;
 				INFOPLIST_FILE = ListViewControllerDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,7 +320,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2RW34KLZ83;
 				INFOPLIST_FILE = ListViewControllerDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
