@@ -34,8 +34,8 @@ class ExamplesViewController: UIViewController {
         
         let getDidSelectItem: (ExampleListCellData) -> (() -> ()) = { data in
             return { [weak self] in
-                guard let detailType = DetailType.init(rawValue: data.text), let self = self else { return }
-                self.showDetailVC(type: detailType)
+                guard let self = self else { return }
+                self.showDetailVC(type: data.detailType)
             }
         }
         
@@ -46,11 +46,7 @@ class ExamplesViewController: UIViewController {
         listViewController.loadItems(items)
         
     }
-    enum DetailType: String {
-        case simple = "Simple"
-        case multiple = "Multiple Cells"
-        case autoResizing = "Auto sizing cells"
-    }
+    
     func showDetailVC(type: DetailType) {
         switch type {
         
@@ -69,8 +65,8 @@ class ExamplesViewController: UIViewController {
 
 
 extension ExampleListCellData {
-    static let sampleData = [ExampleListCellData(text: "Simple"),
-                             ExampleListCellData(text: "Multiple Cells"),
-                             ExampleListCellData(text: "Auto sizing cells")]
+    static let sampleData = [ExampleListCellData(text: "Simple", detailType: .simple),
+                             ExampleListCellData(text: "Multiple Cells", detailType: .multiple),
+                             ExampleListCellData(text: "Auto sizing cells", detailType: .autoResizing)]
 }
 

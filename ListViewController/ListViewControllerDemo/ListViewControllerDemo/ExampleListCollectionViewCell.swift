@@ -41,4 +41,10 @@ struct ExampleListCVCellItemViewModel: ItemCellViewModelProtocol {
 
 struct ExampleListCellData: Codable {
     let text: String
+    let detailType: DetailType
+}
+enum DetailType: String, Codable {
+    case simple = "Simple"
+    case multiple = "Multiple Cells"
+    case autoResizing = "Auto sizing cells"
 }

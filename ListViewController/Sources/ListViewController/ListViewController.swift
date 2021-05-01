@@ -25,17 +25,15 @@ public class ListViewController: UIViewController {
         vc.layout = layout
         return vc
     }
-    private var layout: UICollectionViewFlowLayout!
     
+    private var layout: UICollectionViewFlowLayout!
     
     private lazy var itemListController: SectionedItemListController = {
         let itemListController = SectionedItemListController(collectionView: collectionView, sectionInsets: layout.sectionInset)
-        
         return itemListController
     }()
     
     internal lazy var collectionView: UICollectionView = {
-        
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .clear
@@ -59,9 +57,7 @@ public class ListViewController: UIViewController {
     
     private func setupCollectionView() {
         self.view.addSubview(collectionView)
-        
         view.anchor(top: collectionView.topAnchor, leading: collectionView.leadingAnchor, bottom: collectionView.bottomAnchor, trailing: collectionView.trailingAnchor)
-        
     }
     
     public func loadItems(_ items: [ItemCellViewModelProtocol]) {
