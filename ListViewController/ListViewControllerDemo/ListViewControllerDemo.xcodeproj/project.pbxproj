@@ -64,10 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				2868A179262D387C008E9435 /* AppDelegate.swift */,
-				2868A17D262D387C008E9435 /* ExamplesViewController.swift */,
-				2868A197262D39C0008E9435 /* ExamplesViewController.xib */,
-				2868A19D262D3F77008E9435 /* ExampleListCollectionViewCell.swift */,
-				2868A19E262D3F77008E9435 /* ExampleListCollectionViewCell.xib */,
+				28E042872701C97600C08AB9 /* Examples */,
 				2868A182262D387C008E9435 /* Assets.xcassets */,
 				2868A184262D387C008E9435 /* LaunchScreen.storyboard */,
 				2868A187262D387C008E9435 /* Info.plist */,
@@ -80,6 +77,25 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		28E042872701C97600C08AB9 /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				2868A17D262D387C008E9435 /* ExamplesViewController.swift */,
+				2868A197262D39C0008E9435 /* ExamplesViewController.xib */,
+				28E042882701C98E00C08AB9 /* Cell */,
+			);
+			path = Examples;
+			sourceTree = "<group>";
+		};
+		28E042882701C98E00C08AB9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2868A19D262D3F77008E9435 /* ExampleListCollectionViewCell.swift */,
+				2868A19E262D3F77008E9435 /* ExampleListCollectionViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,7 +128,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1300;
 				TargetAttributes = {
 					2868A175262D387C008E9435 = {
 						CreatedOnToolsVersion = 12.4;
@@ -300,7 +316,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2RW34KLZ83;
 				INFOPLIST_FILE = ListViewControllerDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -320,7 +336,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2RW34KLZ83;
 				INFOPLIST_FILE = ListViewControllerDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
