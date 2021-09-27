@@ -10,7 +10,8 @@ import ListViewController
 
 class ExamplesViewController: UIViewController {
     static func instantiate() -> ExamplesViewController {
-        let vc = ExamplesViewController(nibName: "ExamplesViewController", bundle: Bundle.init(for: Self.self))
+        let vc = ExamplesViewController(nibName: "ExamplesViewController",
+                                        bundle: Bundle.init(for: Self.self))
         return vc
     }
     
@@ -30,7 +31,10 @@ class ExamplesViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         self.view.addSubview(listViewController.view)
-        listViewController.view.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor)
+        listViewController.view.anchor(top: view.topAnchor,
+                                       leading: view.leadingAnchor,
+                                       bottom: view.bottomAnchor,
+                                       trailing: view.trailingAnchor)
         
         let getDidSelectItem: (ExampleListCellData) -> (() -> ()) = { data in
             return { [weak self] in
@@ -40,7 +44,8 @@ class ExamplesViewController: UIViewController {
         }
         
         let items: [ItemCellViewModelProtocol] = ExampleListCellData.sampleData.map({
-            return ExampleListCVCellItemViewModel(data: $0, didSelectAction: getDidSelectItem($0))
+            return ExampleListCVCellItemViewModel(data: $0,
+                                                  didSelectAction: getDidSelectItem($0))
         })
         
         listViewController.loadItems(items)

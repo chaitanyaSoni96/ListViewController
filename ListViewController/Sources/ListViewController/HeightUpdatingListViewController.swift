@@ -6,7 +6,8 @@ import UIKit
 
 
 public class HeightUpdatingListViewController: ListViewController {
-    static func instantiate(layout: UICollectionViewFlowLayout, whenUpdatesContentSize: @escaping ((CGSize) -> Void)) -> HeightUpdatingListViewController {
+    static func instantiate(layout: UICollectionViewFlowLayout,
+                            whenUpdatesContentSize: @escaping ((CGSize) -> Void)) -> HeightUpdatingListViewController {
         let vc = HeightUpdatingListViewController.instantiate(
             layout: layout)
         vc.didUpdateCollectionViewContentSize = whenUpdatesContentSize

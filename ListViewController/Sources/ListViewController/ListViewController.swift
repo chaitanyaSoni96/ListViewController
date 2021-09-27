@@ -29,12 +29,14 @@ public class ListViewController: UIViewController {
     private var layout: UICollectionViewFlowLayout!
     
     private lazy var itemListController: SectionedItemListController = {
-        let itemListController = SectionedItemListController(collectionView: collectionView, sectionInsets: layout.sectionInset)
+        let itemListController = SectionedItemListController(collectionView: collectionView,
+                                                             sectionInsets: layout.sectionInset)
         return itemListController
     }()
     
     internal lazy var collectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        let collectionView = UICollectionView(frame: .zero,
+                                              collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .clear
         collectionView.showsVerticalScrollIndicator = false
@@ -57,18 +59,18 @@ public class ListViewController: UIViewController {
     
     private func setupCollectionView() {
         self.view.addSubview(collectionView)
-        view.anchor(top: collectionView.topAnchor, leading: collectionView.leadingAnchor, bottom: collectionView.bottomAnchor, trailing: collectionView.trailingAnchor)
+        view.anchor(top: collectionView.topAnchor,
+                    leading: collectionView.leadingAnchor,
+                    bottom: collectionView.bottomAnchor,
+                    trailing: collectionView.trailingAnchor)
     }
     
+    /// Accepts an array of ItemCellViewModelProtocol and creates a new ItemSectionViewModelProtocol
     public func loadItems(_ items: [ItemCellViewModelProtocol]) {
-        
-        var tempItems = items
-        injectCompletionForReloadOnHeightChange(in: &tempItems)
-        
-        self.items = [SingleSectionViewModel(itemCellArray: tempItems)]
-        
+        loadItems([SingleSectionViewModel(itemCellArray: items)])
     }
     
+    /// Accepts an array of ItemSectionViewModelProtocol
     public func loadItems(_ items: [ItemSectionViewModelProtocol]) {
         let tempSections: [ItemSectionViewModelProtocol] = items.map({ section in
             var tempSection = section
@@ -89,7 +91,7 @@ public class ListViewController: UIViewController {
         }
     }
     
-    struct SingleSectionViewModel: ItemSectionViewModelProtocol {
+    private struct SingleSectionViewModel: ItemSectionViewModelProtocol {
         var itemCellArray: [ItemCellViewModelProtocol]
         var header: ItemHeaderFooterViewModelProtocol? = nil
         var footer: ItemHeaderFooterViewModelProtocol? = nil
